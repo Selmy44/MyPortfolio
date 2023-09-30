@@ -1,0 +1,57 @@
+# MyPortfolio
+This My Portfolio
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Business Registration</title>
+</head>
+<body>
+    <h1>Business Registration</h1>
+    
+    <form id="registration-form">
+        <label for="business-name">Business Name:</label>
+        <input type="text" id="business-name" required>
+        
+        <label for="business-type">Business Type:</label>
+        <select id="business-type" required>
+            <option value="sole-proprietorship">Sole Proprietorship</option>
+            <option value="partnership">Partnership</option>
+            <option value="corporation">Corporation</option>
+            <option value="llc">Limited Liability Company (LLC)</option>
+        </select>
+        
+        <label for="business-email">Email:</label>
+        <input type="email" id="business-email" required>
+        
+        <label for="business-phone">Phone Number:</label>
+        <input type="tel" id="business-phone" required>
+        
+        <button type="submit">Register</button>
+    </form>
+
+    <div id="registration-result"></div>
+
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get form values
+            var businessName = document.getElementById('business-name').value;
+            var businessType = document.getElementById('business-type').value;
+            var businessEmail = document.getElementById('business-email').value;
+            var businessPhone = document.getElementById('business-phone').value;
+
+            // Perform registration (you can replace this with your actual registration logic)
+            // For this example, we're just displaying the values in a div
+            var registrationResult = document.getElementById('registration-result');
+            registrationResult.innerHTML = `
+                <h2>Registration Successful</h2>
+                <p>Name: ${businessName}</p>
+                <p>Type: ${businessType}</p>
+                <p>Email: ${businessEmail}</p>
+                <p>Phone: ${businessPhone}</p>
+            `;
+        });
+    </script>
+</body>
+</html>
